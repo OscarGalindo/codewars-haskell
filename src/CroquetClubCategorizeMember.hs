@@ -5,7 +5,6 @@ data Membership = Open
                 deriving (Eq, Show)
 
 openOrSenior :: [(Int, Int)] -> [Membership]
-openOrSenior [] = []
-openOrSenior x = check <$> x
+openOrSenior = map check
         where check (x, y) | x >= 55 && y > 7 = Senior
                            | otherwise = Open
